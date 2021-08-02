@@ -1,0 +1,20 @@
+{
+  "name": "Module-trainer-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jbolton89/Module-trainer-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jbolton89/Module-trainer-/issues"
+  },
+  "homepage": "https://github.com/Jbolton89/Module-trainer-#readme"
+}
