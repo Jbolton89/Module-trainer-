@@ -10,6 +10,8 @@ import Dashboard from '../pages/dashboard';
 import Login from '../pages/login';
 import Signup from '../pages/signup.js'; 
 import Signout from '../pages/signout.js';   
+import Footer from '../pages/footer.js'; 
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 
 
@@ -41,6 +43,7 @@ export default function Container() {
             </Switch>
                 
                 </div>
+                <Footer />
             </Router>
         </div>
     )
