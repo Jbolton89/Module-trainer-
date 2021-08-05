@@ -11,6 +11,7 @@ import Login from '../pages/login';
 import Signup from '../pages/signup.js'; 
 import Signout from '../pages/signout.js';   
 import Footer from '../pages/footer.js'; 
+import SelectionPage from '../pages/selectionPage.js';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 
@@ -36,6 +37,7 @@ export default function Container() {
                     <Route path="/chemistry" component={Chemistry} exact ></Route>
                     <Route path="/biology" component={Biology} exact ></Route>
                     <Route path="/login" component={Login} exact ></Route>
+                    <Route path="/selectionpage" component={SelectionPage} exact ></Route>
 
 
 

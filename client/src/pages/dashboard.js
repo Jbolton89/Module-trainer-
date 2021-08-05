@@ -48,8 +48,10 @@ export default function Dashboard() {
       </span>
     </div>
   </div>
-  <div className="overflow-hidden h-5 m text-xs flex rounded bg-green-400">
-    <div styleName="width:30%" className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-yellow-200"></div>
+  <div className="overflow-hidden h-5 mt-5 mb-12 text-xs flex rounded bg-green-400">
+    <div styleName="width:30%" className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-yellow-200">
+
+    </div>
   </div>
 </div>
            

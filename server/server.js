@@ -1,4 +1,5 @@
 const express = require('express');
+const graphqlHTTP = require('express-graphql');
 const path = require('path');
 const db = require('./config/connection');
 const routes = require('./routes');
