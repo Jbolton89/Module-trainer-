@@ -32,7 +32,7 @@ export default function Navbar() {
                     {/* <img src={Logo} alt='' class='h-14 w-14'></img> */}
         
                     {/* Try and find a badge for here */}
-                       <span className="font-bold text-3xl m-auto">
+                       <span className="font-bold text-4xl m-auto">
                         <Link to='/'>Module Trainer</Link>
                         </span>
                         </div>
@@ -46,7 +46,7 @@ export default function Navbar() {
                         return ( 
                             <div key={route.title}  >
                                 <Link to={route.url}
-                                className={`bg-blue-700 bg-opacity-50 hover:bg-blue-800 px-5 py-3  rounded-3xl text-sm sm:flex-grow text-white ${location.pathname === route.url ? 'nav-link-active' : 'nav-link'}`}>
+                                className={`bg-blue-700 bg-opacity-50 hover:bg-blue-800 px-5 py-3 rounded-3xl text-sm sm:flex-grow text-white ${location.pathname === route.url ? 'nav-link-active' : 'nav-link'}`}>
                                     {route.title}
                                 </Link>
                             </div>

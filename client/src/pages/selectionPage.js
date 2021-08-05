@@ -23,7 +23,7 @@ export default function SelectionPage() {
                     <div className="px-8 mt-8 sm:mt-0 text-xl font-bold uppercase text-gray-700">
                      Select your subject
                     </div>
-                    <span className="text-sm text-gray-500">What are you feeling today?</span>
+                    <span className="text-sm text-gray-500 italic">What are you feeling today?</span>
                   </div>
                   <div className="w-full lg:w-4/12 md 6/12 px-10 lg:order-1">
                     <div className="sm:flex justify-center py-4 lg:pt-4">
