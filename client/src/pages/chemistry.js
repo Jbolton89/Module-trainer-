@@ -2,7 +2,7 @@ import React from 'react'
 import { FaBiohazard, FaRadiation, FaFlask } from "react-icons/fa";
 
 
-export default function SelectionPage() { 
+export default function Chemistry() { 
     return ( 
 
 <div> 

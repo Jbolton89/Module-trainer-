@@ -19,14 +19,15 @@ export default function SelectionPage() {
                   <div className="w-full lg:w-auto px-4 lg:order-2 flex justify-center">
                     
                   </div>
-                  <div className="w-full lg:w-auto px-4 lg:order-3 lg:text-right lg:self-center">
-                    <div className="py-6 px-3 mt-32 sm:mt-0">
-                      {/* Can put something here  */}
+                  <div className="w-full lg:w-auto px-4 lg:order-3 lg:text-right lg:self-center text-center">
+                    <div className="px-8 mt-8 sm:mt-0 text-xl font-bold uppercase text-gray-700">
+                     Select your subject
                     </div>
+                    <span className="text-sm text-gray-500">What are you feeling today?</span>
                   </div>
-                  <div className="w-full lg:w-4/12 md 6/12 px-4 lg:order-1">
-                    <div className="flex justify-center py-4 lg:pt-4 pt-8">
-                      <div className="mr-4 p-3 text-center">
+                  <div className="w-full lg:w-4/12 md 6/12 px-10 lg:order-1">
+                    <div className="sm:flex justify-center py-4 lg:pt-4">
+                      <div className=" p-3 text-center">
                         <button className="text-xl font-bold block uppercase tracking-wide text-gray-700">
                         <span className="text-4xl font-semibold inline-block py-5 px-5 uppercase rounded-full text-white bg-green-800 mr-3">
                             < FaBiohazard />
@@ -35,7 +36,7 @@ export default function SelectionPage() {
                         </button>
                         <button className="text-sm text-gray-500">'OMFG what is that?' - Click this one</button>
                       </div>
-                      <div className="mr-4 p-3 text-center">
+                      <div className=" p-3 text-center">
                         <button className="text-xl font-bold block uppercase tracking-wide text-gray-700">
                         <span className="text-4xl font-semibold inline-block py-5 px-5 uppercase rounded-full text-white bg-yellow-800 mr-3">
                             <FaFlask />
@@ -46,7 +47,7 @@ export default function SelectionPage() {
                         </button>
                       </div>
                       <div className="lg:mr-4 p-3 text-center">
-                        <button className="text-xl font-bold block uppercase tracking-wide text-gray-700">
+                        <button className="text-xl font-bold block uppercase tracking-wide text-gray-700 flex flex-col">
                         <span className="text-4xl font-semibold inline-block py-5 px-5 uppercase rounded-full text-white bg-red-800 mr-3">
                             <FaRadiation />
                           </span> Physics
