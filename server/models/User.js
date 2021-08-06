@@ -20,12 +20,11 @@ const UserSchema = new Schema({
         trim: true,
         lowercase: true,
         unique: true,
-        validate: [ 
-            validator({ 
-                validator: 'isEmail',
-                message: 'Must enter a valid email'
-            })
-        ],
+        // validate: [({ 
+        //         validate: 'isEmail',
+        //         message: 'Must enter a valid email'
+        //     })
+        // ],
     },
 
     password: {
@@ -49,7 +48,7 @@ const UserSchema = new Schema({
 });
 
 // Bcrypt - need to check if correct 
-userSchema.pre('save', async function (next) {
+UserSchema.pre('save', async function (next) {
     if (this.isNew || this.isModified('password')) {
       const saltRounds = 10;
       this.password = await bcrypt.hash(this.password, saltRounds);
@@ -58,19 +57,19 @@ userSchema.pre('save', async function (next) {
     next();
   });
   
-  userSchema.methods.isCorrectPassword = async function (password) {
+  UserSchema.methods.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password);
   };
 
 
   
-userSchema.methods.setFullName = function() { 
+UserSchema.methods.setFullName = function() { 
     this.fullName = `${this.firstname} ${this.lastname}`; 
 
     return this.fullName; 
 }; 
 
-userSchema.methods.lastUpdatedDate = function() { 
+UserSchema.methods.lastUpdatedDate = function() { 
     this.lastLoggedIn = Date.now()
 }
 

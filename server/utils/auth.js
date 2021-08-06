@@ -1,5 +1,3 @@
-//  From 22-17-JWT Review
-
 const jwt = require('jsonwebtoken');
 
 const secret = 'mysecretssshhhhhhh';

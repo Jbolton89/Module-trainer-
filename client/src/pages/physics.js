@@ -50,7 +50,7 @@ export default function Physics() {
                     </div>
                   </div>
                 </div>
-                <div className="w-full lg:w-4/12 md 6/12 px-4 lg:order-1"></div>
+                <div className="w-full px-4 lg:order-1"></div>
                 <div className="flex flex-row">
                   <div className=" mt-2 flex flex-col xl:flex-row">
                     <Document
@@ -74,7 +74,7 @@ export default function Physics() {
                     </Document>
                   </div>
                 </div>
-                <div className="h-24 order-1">
+                <div className="h-24 order-1 mx-auto text-center">
                   <p className="text-xl font-bold block uppercase tracking-wide text-gray-700 flex flex-col">
                     Page {pageNumber || (numPages ? 1 : "--")} of{" "}
                     {numPages || "--"}
