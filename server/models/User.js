@@ -35,6 +35,20 @@ const UserSchema = new Schema({
 
     },
 
+    userRating: { 
+        type: Number, 
+        trim: true, 
+    },
+
+    lessons: [
+        { 
+            type: Schema.Types.ObjectId, 
+            ref: 'Lesson'
+        }
+    ], 
+
+
+
     userCreated: { 
         type: Date, 
         default: Date.now

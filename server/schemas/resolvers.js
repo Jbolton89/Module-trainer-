@@ -1,4 +1,4 @@
-const { AuthernicationError, AuthenticationError } = require('apollo-server-express'); 
+const { AuthenticationError } = require('apollo-server-express'); 
 const { User, Lesson } = require('../models');
 const { signToken } = require('../utils/auth');
 
@@ -45,6 +45,23 @@ const resolvers = {
            const token = signToken(user); 
 
            return { token, user };
+       },
+
+       newLesson: async (parent, { title, subject }, context) =>{ 
+           if (context.user) { 
+               const lesson = await Lesson.create({
+                   title, 
+                   subject,
+               });
+
+               await User.findOneAndUpdate( 
+                   {_id: context.user._id }, 
+                   {$addToSet: { lessons: lesson._id}}
+               );
+
+               return lesson; 
+           }
+           throw new AuthenticationError('You need to log in'); 
        },
 
    }

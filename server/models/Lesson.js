@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 const LessonSchema = new Schema ({ 
 
-    // id is created automatically by mongoDB? 
 
     title: { 
         type: String, 
@@ -18,7 +17,7 @@ const LessonSchema = new Schema ({
 
     
 
-})
+});
 
 const User = mongoose.model("Lesson", LessonSchema)
 
