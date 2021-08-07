@@ -1,0 +1,72 @@
+[
+    { 
+        "firstName": "Albert",
+        "lastName": "Einstein",
+        "email": "albert.einstein@gmail.com",
+        "password": "password1234",
+        "lessons": "Physics"
+    }, 
+    { 
+        "firstName": "Isaac",
+        "lastName": "Newton",
+        "email": "isaac.newton@gmail.com",
+        "password": "password1234",
+        "lessons": "Physics"
+    }, 
+    { 
+        "firstName": "Marie",
+        "lastName": "Curie",
+        "email": "marie.curie@gmail.com",
+        "password": "password1234",
+        "lessons": ["Chemistry", "Physics"]
+    }, 
+    { 
+        "firstName": "Rosalind",
+        "lastName": "Franklin",
+        "email": "rosalind.franklin@gmail.com",
+        "password": "password1234",
+        "lessons": ["Biology, Chemistry"]
+    }, 
+    { 
+        "firstName": "Nicola",
+        "lastName": "Tesla",
+        "email": "nicola.tesla@gmail.com",
+        "password": "password1234",
+        "lessons": "Physics"
+    }, 
+    { 
+        "firstName": "Charles",
+        "lastName": "Darwin",
+        "email": "charles.darwin@gmail.com",
+        "password": "password1234",
+        "lessons": "Biology"
+    }, 
+    { 
+        "firstName": "Alan",
+        "lastName": "Turing",
+        "email": "alan.turing@gmail.com",
+        "password": "password1234",
+        "lessons": ["Physics", "Chemistry","Biology"]
+    }, 
+    { 
+        "firstName": "Stephen",
+        "lastName": "Hawking",
+        "email": "steven.hawking@gmail.com",
+        "password": "password1234",
+        "lessons": "Physics"
+    }, 
+    { 
+        "firstName": "James D",
+        "lastName": "Watson",
+        "email": "james.d.watson@gmail.com",
+        "password": "password1234",
+        "lessons": ["Biology", "Chemistry"]
+    }, 
+    { 
+        "firstName": "Madeleine",
+        "lastName": "O'Dea",
+        "email": "modes@gmail.com",
+        "password": "password1234",
+        "lessons": ""
+    } 
+]

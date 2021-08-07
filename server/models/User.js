@@ -1,6 +1,11 @@
+import { isEmail } from 'validator';
+
 const mongoose = require('mongoose'); 
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
+
+
+
 
 const UserSchema = new Schema({
     firstName: { 
@@ -20,11 +25,7 @@ const UserSchema = new Schema({
         trim: true,
         lowercase: true,
         unique: true,
-        // validate: [({ 
-        //         validate: 'isEmail',
-        //         message: 'Must enter a valid email'
-        //     })
-        // ],
+        validate: [isEmail, 'Please fill a valid email address'],
     },
 
     password: {
@@ -35,10 +36,18 @@ const UserSchema = new Schema({
 
     },
 
-    userRating: { 
-        type: Number, 
-        trim: true, 
-    },
+    userRating: [{ 
+        by: {
+            type: Schema.Types.ObjectId,
+            userRating: { 
+                type: Number, 
+                min: 1,
+                max: 10, 
+                // validate: ratingValidator
+            }
+        }}
+    ],
+
 
     lessons: [
         { 
@@ -75,7 +84,6 @@ UserSchema.pre('save', async function (next) {
     return bcrypt.compare(password, this.password);
   };
 
-
   
 UserSchema.methods.setFullName = function() { 
     this.fullName = `${this.firstname} ${this.lastname}`; 
@@ -88,6 +96,8 @@ UserSchema.methods.lastUpdatedDate = function() {
 }
 
 const User = mongoose.model("User", UserSchema)
+
+
 
 module.exports = User;
 
