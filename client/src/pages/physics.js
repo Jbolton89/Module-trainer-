@@ -8,6 +8,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 export default function Physics() {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
+  const [ checked, setChecked ] = useState(false); 
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
@@ -25,6 +26,11 @@ export default function Physics() {
   function nextPage() {
     changePage(1);
   }
+
+  function handleTickboxChange() { 
+    setChecked(!checked); 
+
+  };
 
   return (
     <div>
@@ -99,6 +105,21 @@ export default function Physics() {
               </div>
             </div>
           </div>
+          <div>
+                        <label className="inline-flex items-center cursor-pointer">
+                          <input
+                            id="customCheckLogin"
+                            type="checkbox"
+                            className="form-checkbox border-0 rounded text-gray-800 ml-1 w-5 h-5"
+                            style={{ transition: "all .15s ease" }}
+                            defaultChecked='false'
+                            onChange={handleTickboxChange}
+                          />
+                          <span className="ml-2 text-sm font-semibold text-white text-bold text-xl ">
+                            I have completed this module!
+                          </span>
+                        </label>
+                      </div>
         </div>
       </section>
     </div>

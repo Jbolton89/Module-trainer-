@@ -8,7 +8,7 @@ type User {
     name: String
     email: String
     password: String
-    lessons: [Lesson]!
+    hasCompleted: [Lesson]!
   }
 
 type Lesson { 
@@ -34,6 +34,7 @@ type Mutation {
     newUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     newLesson(title: String!, subject: String):Lesson
+    updateProgress(fullName: String!, hasCompleted: Boolean): User
   }
 `
 

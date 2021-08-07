@@ -5,7 +5,9 @@ const userSeeds = require('./userSeeds.json');
 db.once('open', async () => { 
     try { 
         await User.deleteMany({}); 
+        await Lesson.deleteMany({});
         await User.create(userSeeds);
+        await Lesson.create(lessonSeeds);
 
         console.log('successfully seeded'); 
         process.exit(0); 

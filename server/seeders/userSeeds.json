@@ -4,7 +4,7 @@
         "lastName": "Einstein",
         "email": "albert.einstein@gmail.com",
         "password": "password1234",
-        "lessons": {
+        "hasCompleted": {
             "title":"Physics"
         } 
     }, 
@@ -13,7 +13,7 @@
         "lastName": "Newton",
         "email": "isaac.newton@gmail.com",
         "password": "password1234",
-        "lessons": {
+        "hasCompleted": {
             "title":"Phyics"
         }
     }, 
@@ -22,7 +22,7 @@
         "lastName": "Curie",
         "email": "marie.curie@gmail.com",
         "password": "password1234",
-        "lessons": {
+        "HasCompleted": {
             "title": ["Chemistry", "Physics"]
         } 
     }, 
@@ -31,7 +31,7 @@
         "lastName": "Franklin",
         "email": "rosalind.franklin@gmail.com",
         "password": "password1234",
-        "lessons": {
+        "hasCompleted": {
             "title":["Biology, Chemistry"]
         } 
     }, 
@@ -40,7 +40,7 @@
         "lastName": "Tesla",
         "email": "nicola.tesla@gmail.com",
         "password": "password1234",
-        "lessons": {
+        "hasCompleted": {
             "title":"Physics"
         }   
     }, 
@@ -49,7 +49,7 @@
         "lastName": "Darwin",
         "email": "charles.darwin@gmail.com",
         "password": "password1234",
-        "lessons": {
+        "hasCompleted": {
             "title":"Biology"
         }
     }, 
@@ -58,7 +58,7 @@
         "lastName": "Turing",
         "email": "alan.turing@gmail.com",
         "password": "password1234",
-        "lessons": {
+        "hasCompleted": {
             "title": ["Physics", "Chemistry","Biology"]
         } 
     }, 
@@ -67,7 +67,7 @@
         "lastName": "Hawking",
         "email": "steven.hawking@gmail.com",
         "password": "password1234",
-        "lessons": {
+        "hasCompleted": {
             "title":"Physics"
         }
     }, 
@@ -76,7 +76,7 @@
         "lastName": "Watson",
         "email": "james.d.watson@gmail.com",
         "password": "password1234",
-        "lessons": {
+        "hasCompleted": {
             "title":["Biology", "Chemistry"]
         } 
     }, 
@@ -85,7 +85,7 @@
         "lastName": "O'Dea",
         "email": "modes@gmail.com",
         "password": "password1234",
-        "lessons": {
+        "hasCompleted": {
             "title":""
         }
     } 
