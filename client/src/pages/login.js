@@ -1,7 +1,56 @@
-import React from 'react' 
+import React, { useState } from 'react' 
+import { useMutation } from '@apollo/client'; 
+import { Link } from 'react-router-dom';
+import { LOGIN_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
+
+
+
 // import Background from ../
 
-export default function Login() { 
+
+
+export default function Login(props) { 
+
+  const [formState, setFormState ] = useState({ email: '', password: ''});
+  const [login, { error, data }] = useMutation(LOGIN_USER);
+
+   // update state based on form input changes
+  const handleChange = (event) => { 
+    const { email, value } = event.target;
+
+    setFormState({ 
+      ...formState,
+      [email]: value,
+    });
+  };
+
+  // submit form
+  const handleFormSubmit = async (event) => { 
+    event.preventDefault();
+    console.log(formState);
+    try { 
+      const { data } = await login({ 
+        variables: { ...formState },
+      });
+
+      Auth.login(data.login.token); 
+    } catch (e) { 
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({ 
+      email: '',
+      password: '',
+    });
+  }
+
+
+
+
+
+
     return ( 
         <section className="absolute w-full h-full">
           <div
@@ -27,7 +76,7 @@ export default function Login() {
                     <hr className="mt-6 border-b-1 border-gray-600" />
                   </div>
                   <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
-                    <form>
+                    <form on submit={handleFormSubmit}>
                       <div className="relative w-full mb-3">
                         <label
                           className="block uppercase text-gray-700 text-xs font-bold mb-2"
@@ -37,9 +86,12 @@ export default function Login() {
                         </label>
                         <input
                           type="email"
+                          name="email"
                           className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                           placeholder="Email"
                           style={{ transition: "all .15s ease" }}
+                          value={formState.email}
+                          onChange={handleChange}
                         />
                       </div>
 

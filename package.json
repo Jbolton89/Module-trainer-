@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Jbolton89/Module-trainer-/issues"
   },
-  "homepage": "https://github.com/Jbolton89/Module-trainer-#readme"
+  "homepage": "https://github.com/Jbolton89/Module-trainer-#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  }
 }

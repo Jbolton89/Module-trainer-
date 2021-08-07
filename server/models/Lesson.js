@@ -15,6 +15,9 @@ const LessonSchema = new Schema ({
         trim: true, 
     },
 
+    completed: {
+        type: Boolean
+    }
     
 
 });

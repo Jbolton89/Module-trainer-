@@ -1,4 +1,5 @@
-import { isEmail } from 'validator';
+const { isEmail } = require('validator');
+const Lesson = require('./Lesson');
 
 const mongoose = require('mongoose'); 
 const Schema = mongoose.Schema;
@@ -48,14 +49,17 @@ const UserSchema = new Schema({
         }}
     ],
 
-
-    lessons: [
-        { 
-            type: Schema.Types.ObjectId, 
+    hasCompleted: [Lesson.schema], 
+        title: [{ 
+            type: Schema.Types.ObjectId,
             ref: 'Lesson'
-        }
-    ], 
+            }],
 
+                    
+        
+        
+       
+    
 
 
     userCreated: { 
@@ -66,6 +70,13 @@ const UserSchema = new Schema({
     fullName: String,
 
     lastLoggedIn: Date, 
+
+    lessons: [Lesson.schema],
+     title: [{ 
+            type: Schema.Types.ObjectId, 
+            ref: 'Lesson',
+        }] 
+    
 
 
 });

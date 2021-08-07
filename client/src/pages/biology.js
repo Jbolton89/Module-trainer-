@@ -1,37 +1,100 @@
-import React from "react";
-import { FaBiohazard, FaRadiation, FaFlask } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaBiohazard } from "react-icons/fa";
+import { Document, Page, pdfjs } from "react-pdf";
+
+import BiologyPDF from "../images/biology.pdf";
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 export default function Physics() {
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+    setPageNumber(1);
+  }
+
+  function changePage(offset) {
+    setPageNumber((PrevPageNumber) => PrevPageNumber + offset);
+  }
+
+  function previousPage() {
+    changePage(-1);
+  }
+
+  function nextPage() {
+    changePage(1);
+  }
+
   return (
     <div>
       <section
-        className="relative block bg-gradient-to-b from-blue-600 to-blue-900"
+        className="relative block bg-gradient-to-b from-blue-600 to-blue-800"
         style={{ height: "200px" }}
       ></section>
-      <section className="relative py-16 bg-gray-300">
-        <div className="mx-auto px-8">
+      <section className="relative py-16 bg-gradient-to-b from-blue-800 to-blue-900">
+        <div className="container mx-auto px-8">
           <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
             <div className="px-6">
               <div className="flex flex-wrap justify-center">
                 <div className="w-full lg:w-auto px-4 lg:order-2 flex justify-center"></div>
-                <div className="w-full lg:w-auto px-4 lg:order-3 lg:text-right lg:self-center">
-                  <div className="py-6 px-3 mt-32 sm:mt-0">
-                    {/* Can put something here  */}
-                  </div>
-                </div>
-                <div className="w-full lg:w-4/12 md 6/12 px-4 lg:order-1">
-                  <div className="flex justify-center py-4 lg:pt-4 pt-8">
-                    {/* This is where content will go */}
+                <div className="flex justify-center py-4 lg:pt-4 pt-8">
+                  {/* This is where content will go */}
 
-                    <div className="lg:mr-4 p-3 text-center">
-                      <button className="text-xl font-bold block uppercase tracking-wide text-gray-700">
-                        <span className="text-4xl font-semibold inline-block py-5 px-5 uppercase rounded-full text-white bg-green-800 mr-3">
-                          <FaBiohazard />
-                        </span>{" "}
-                        Biology
-                      </button>
+                  <div className="p-3 text-center">
+                    <div className="text-xl font-bold block uppercase tracking-wide text-gray-700 flex flex-col">
+                      <span className="text-4xl inline-block py-5 px-5 rounded-full text-white bg-green-800 mr-3 order-1">
+                        <FaBiohazard />
+                      </span>
+                      Biology
                     </div>
                   </div>
+                </div>
+                <div className="w-full px-4 lg:order-1"></div>
+                <div className="flex flex-row">
+                  <div className=" mt-2 flex flex-col xl:flex-row">
+                    <Document
+                      className="border-4 m-5"
+                      file={BiologyPDF}
+                      onLoadSuccess={onDocumentLoadSuccess}
+                      onLoadError={console.error}
+                      options={{ workerSrc: "/pdf.worker.js" }}
+                    >
+                      <Page pageNumber={pageNumber} />
+                    </Document>
+
+                    <Document
+                      className="border-4 m-5"
+                      file={BiologyPDF}
+                      onLoadSuccess={onDocumentLoadSuccess}
+                      onLoadError={console.error}
+                      options={{ workerSrc: "/pdf.worker.js" }}
+                    >
+                      <Page pageNumber={pageNumber + 1} />
+                    </Document>
+                  </div>
+                </div>
+                <div className="h-24 order-1 mx-auto text-center">
+                  <p className="text-xl font-bold block uppercase tracking-wide text-gray-700 flex flex-col">
+                    Page {pageNumber || (numPages ? 1 : "--")} of{" "}
+                    {numPages || "--"}
+                  </p>
+                  <button
+                    type="button"
+                    disabled={pageNumber <= 1}
+                    onClick={previousPage}
+                    className="bg-blue-700 hover:bg-blue-800 px-5 py-3 rounded-3xl text-sm sm:flex-grow text-white"
+                  >
+                    Previous
+                  </button>
+                  <button
+                    type="button"
+                    disabled={pageNumber >= numPages}
+                    onClick={nextPage}
+                    className="bg-blue-700 hover:bg-blue-800 px-5 py-3 rounded-3xl text-sm sm:flex-grow text-white"
+                  >
+                    Next
+                  </button>
                 </div>
               </div>
             </div>
