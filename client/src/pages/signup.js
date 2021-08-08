@@ -11,14 +11,15 @@ export default function Signup() {
     email: "",
     password: "",
   });
+   
   const [addUser, { error, data }] = useMutation(NEW_USER);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const handleInputChange = (event) => {
+    const { email, value } = event.target;
 
     setFormState({
       ...formState,
-      [name]: value,
+      [email]: value,
     });
   };
 
@@ -82,7 +83,7 @@ export default function Signup() {
                         placeholder="Enter first name here"
                         style={{ transition: "all .15s ease" }}
                         value={formState.name}
-                        onChange={handleChange}
+                        onChange={handleInputChange}
                       />
                     </div>
                     <div className="relative w-full mb-3">
@@ -98,7 +99,7 @@ export default function Signup() {
                         placeholder="Last Name"
                         style={{ transition: "all .15s ease" }}
                         value={formState.name}
-                        onChange={handleChange}
+                        onChange={handleInputChange}
                       />
                     </div>
 
@@ -115,7 +116,7 @@ export default function Signup() {
                         placeholder="Email"
                         style={{ transition: "all .15s ease" }}
                         value={formState.email}
-                        onChange={handleChange}
+                        onChange={handleInputChange}
                       />
                     </div>
 
@@ -131,6 +132,7 @@ export default function Signup() {
                         className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                         placeholder="Password"
                         style={{ transition: "all .15s ease" }}
+                        onChange={handleInputChange}
                       />
                     </div>
 

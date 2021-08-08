@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import {
   FaBiohazard,
   FaFlask,
@@ -6,6 +7,7 @@ import {
   FaBookOpen,
   FaAppleAlt,
 } from "react-icons/fa";
+
 
 export default function Home() {
   return (
@@ -66,6 +68,7 @@ export default function Home() {
           </div>
 
           <div className="mt-12 md:width-auto">
+            <Link to='./login'>
             <button className="bg-purple-600 bg-opacity-50 hover:bg-purple-600 shadow text-white dont-bold py-4 px-8 rounded-full ml-5">
               <div className="flex">
                 <FaBookOpen className="text-6xl"></FaBookOpen>
@@ -74,13 +77,15 @@ export default function Home() {
                 </p>
               </div>
             </button>
-
+            </Link>
+            <Link to='signup'>
             <button className="bg-red-600 bg-opacity-50 hover:bg-red-600 shadow text-white dont-bold py-4 px-8 rounded-full ml-5">
               <div className="flex">
                 <FaAppleAlt className="text-6xl"></FaAppleAlt>
                 <p className="pl-5">I am keen to begin learning</p>
               </div>
             </button>
+            </Link>
           </div>
         </section>
       </div>

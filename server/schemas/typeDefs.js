@@ -5,10 +5,14 @@ const typeDefs = gql`
 
 type User {
     _id: ID
-    name: String
+    firstName: String
+    lastName: String
+    fullName: String
     email: String
     password: String
-    hasCompleted: [Lesson]!
+    hasCompleted: [Lesson]! {
+      title: [Lesson]
+    }
   }
 
 type Lesson { 
@@ -31,14 +35,18 @@ type Query {
   }
 
 type Mutation { 
-    newUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    newUser(firstName: String!, lastName: String!, fullName: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     newLesson(title: String!, subject: String):Lesson
-    updateProgress(fullName: String!, hasCompleted: Boolean): User
+    updateProgress(lessons: [ID!], hasCompleted: Boolean!): User
   }
 `
 
   module.exports = typeDefs; 
+
+
+
+
 
 
 

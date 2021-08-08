@@ -4,19 +4,13 @@ import { Link } from 'react-router-dom';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-
-
-// import Background from ../
-
-
-
 export default function Login(props) { 
 
   const [formState, setFormState ] = useState({ email: '', password: ''});
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
    // update state based on form input changes
-  const handleChange = (event) => { 
+  const handleInputChange = (event) => { 
     const { email, value } = event.target;
 
     setFormState({ 
@@ -85,13 +79,13 @@ export default function Login(props) {
                           Email
                         </label>
                         <input
-                          type="email"
+                          type="text"
                           name="email"
                           className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                           placeholder="Email"
                           style={{ transition: "all .15s ease" }}
                           value={formState.email}
-                          onChange={handleChange}
+                          onChange={handleInputChange}
                         />
                       </div>
 
@@ -104,9 +98,12 @@ export default function Login(props) {
                         </label>
                         <input
                           type="password"
+                          name="password"
                           className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                           placeholder="Password"
                           style={{ transition: "all .15s ease" }}
+                          value={ formState.password}
+                          onChange={handleInputChange}
                         />
                       </div>
                       <div>

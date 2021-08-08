@@ -57,12 +57,28 @@ const resolvers = {
                await User.findOneAndUpdate( 
                    {_id: context.user._id }, 
                    {$addToSet: { lessons: lesson._id}}
+                //    enter title for the lesson we are adding
                );
 
                return lesson; 
            }
            throw new AuthenticationError('You need to log in'); 
        },
+
+       updateProgress: async(parent, { title, hasCompleted }, context => { 
+           if (context.user) { 
+               const progress = await User.populate({ 
+                   hasCompleted,
+                   title,
+               });
+
+               await User.findOneAndUpdate( 
+                   {_id: context.user._id},
+                   {$push: { hasCompleted: _id.title  }}
+                    // Need a way to add the science to the users progress
+               )
+           }
+       } )
 
    }
 

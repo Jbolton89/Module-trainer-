@@ -34,6 +34,20 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
+app.post("/submit", ({body}, res) => {
+  const user = new User(body);
+  user.setFullName();
+  user.userCreated();
+
+  User.create(user)
+    .then(dbUser => {
+      res.json(dbUser);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
+
 db.once('open', () => {
   app.listen(PORT, () => console.log(`Now listening on localhost: ${PORT}`));
   console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);

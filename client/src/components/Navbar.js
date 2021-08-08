@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '../images/logo.jpg';
 import { FaFrog } from "react-icons/fa";
+import Auth from "../utils/auth";
 
 export default function Navbar() { 
 
@@ -41,8 +42,8 @@ export default function Navbar() {
                 
                 </div> 
                 <div className='w-fill block flex grow sm:flex sm:items-center sm:w-auto justify-between'>  
-
-                    {routes.map((route) => { 
+                    {Auth.loggedIn() ? (
+                    routes.map((route) => { 
                         return ( 
                             <div key={route.title}  >
                                 <Link to={route.url}
@@ -51,10 +52,10 @@ export default function Navbar() {
                                 </Link>
                             </div>
                         )
-                    })}
+                    })
+                    ) : ("")}
 
-                    {/* Need to make this collapse */}
-
+                  
                 </div>
 
             </nav>

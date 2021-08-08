@@ -32,7 +32,7 @@
         "email": "rosalind.franklin@gmail.com",
         "password": "password1234",
         "hasCompleted": {
-            "title":["Biology, Chemistry"]
+            "title":["Biology", "Chemistry"]
         } 
     }, 
     { 

@@ -46,10 +46,10 @@ export default function Dashboard() {
             <div className="flex-auto p-4 border-4">
               <div className="flex flex-wrap">
                 <div className="relative w-full pr-4 max-w-full flex-grow flex-1">
-                  <h5 className="text-blueGray-400 uppercase font-bold text-xs">
+                  <h5 className="text-grey-400 uppercase font-bold text-xs">
                     Progress
                   </h5>
-                  <span className="font-semibold text-xl text-blueGray-700">
+                  <span className="font-semibold text-xl text-grey-400">
                     Doing ok
                   </span>
                 </div>
@@ -59,7 +59,7 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-              <p className="text-sm text-blueGray-400 mt-4">
+              <p className="text-sm text-grey-400 mt-4">
                 <span className="text-emerald-500 mr-2">
                   <i className="fas fa-arrow-up"></i> 3.48%
                 </span>
@@ -73,7 +73,7 @@ export default function Dashboard() {
             <div className="flex-auto p-4">
               <div className="flex flex-wrap">
                 <div className="relative w-full pr-4 max-w-full flex-grow flex-1">
-                  <h5 className="text-blueGray-400 uppercase font-bold text-xs">
+                  <h5 className="text-gray-400 uppercase font-bold text-xs">
                     Classes completed
                   </h5>
                   <span className="font-semibold text-xl text-blueGray-700">
@@ -86,7 +86,7 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-              <p className="text-sm text-blueGray-400 mt-4">
+              <p className="text-sm text-gray-400 mt-4">
                 <span className="text-red-500 mr-2">
                   <i className="fas fa-arrow-down"></i> 3.48%
                 </span>

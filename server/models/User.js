@@ -52,7 +52,7 @@ const UserSchema = new Schema({
     hasCompleted: [Lesson.schema], 
         title: [{ 
             type: Schema.Types.ObjectId,
-            ref: 'Lesson'
+            ref: 'Lesson' 
             }],
 
                     
