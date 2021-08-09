@@ -20,11 +20,11 @@ export default function Physics() {
   }
 
   function previousPage() {
-    changePage(-1);
+    changePage(-2);
   }
 
   function nextPage() {
-    changePage(1);
+    changePage(2);
   }
 
   function handleCheckboxChange() { 
