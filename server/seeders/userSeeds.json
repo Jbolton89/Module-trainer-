@@ -14,7 +14,7 @@
         "email": "isaac.newton@gmail.com",
         "password": "password1234",
         "hasCompleted": {
-            "title":"Phyics"
+            "title": "Phyics"
         }
     }, 
     { 
@@ -22,9 +22,15 @@
         "lastName": "Curie",
         "email": "marie.curie@gmail.com",
         "password": "password1234",
-        "HasCompleted": {
-            "title": ["Chemistry", "Physics"]
-        } 
+        "hasCompleted":[{
+            "title": "Chemistry",
+            "subject": "Science",
+            "completed": true
+        }, {
+            "title": "Physics",
+            "subject": "Science",
+            "completed": true
+        }] 
     }, 
     { 
         "firstName": "Rosalind",
