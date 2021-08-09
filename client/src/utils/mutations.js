@@ -33,9 +33,11 @@ export const UPDATE_PROGRESS = gql`
   updateProgress(email: $email, hasCompleted: $hasCompleted) { 
     _id
     email
-    hasCompleted (titles: [Biology, Chemistry, Physics]){ 
+    hasCompleted { 
       _id
       title
+      subject
+      completed
     }
     
   }
