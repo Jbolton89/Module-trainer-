@@ -19,9 +19,8 @@ export default function Home() {
               Online Training, to get your mind ripped
             </h3>
             <p className="mt-4 ml-6 text-lg leading-relaxed mt-1 text-sm text-gray-300 italic">
-              Think you are pretty bright huh? Why dont' you put your brain to
-              the test. Come on down and have a brain training session with your
-              old mate Jason.
+              Come on down and have a brain training session with your
+              old mate Jase.
             </p>
             <div className='m-8 text-bold font-bold'> 
                     <h4 className=''> Current Packages: </h4>

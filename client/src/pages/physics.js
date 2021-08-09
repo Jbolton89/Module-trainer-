@@ -27,8 +27,15 @@ export default function Physics() {
     changePage(1);
   }
 
-  function handleCheckboxChange(event) { 
-    setChecked(event.target.checked); 
+  function handleCheckboxChange(e) { 
+    setChecked(e.target.checked);
+    const { hasCompleted, value } = e.target; 
+
+    setChecked({ 
+      ...checked,
+      [hasCompleted]: value, 
+    });
+
 
   };
 
@@ -113,6 +120,7 @@ export default function Physics() {
                             className="form-checkbox border-0 rounded text-gray-800 ml-1 w-5 h-5"
                             style={{ transition: "all .15s ease" }}
                             defaultChecked={checked}
+                            value="Physics"
                             onChange={handleCheckboxChange}
                           />
                           <span className="ml-2 text-sm font-semibold text-white text-bold text-xl ">

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaBiohazard } from "react-icons/fa";
 import { Document, Page, pdfjs } from "react-pdf";
+// import { Lesson } from "../../../server/models";
 
 import BiologyPDF from "../images/biology.pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -24,11 +25,12 @@ export default function Physics() {
   }
 
   function nextPage() {
-    changePage(1);
+    
   }
 
   function handleCheckboxChange() { 
     setChecked(!checked); 
+    
 
   };
 
@@ -115,8 +117,9 @@ export default function Physics() {
                             type="checkbox"
                             className="form-checkbox border-0 rounded text-gray-800 ml-1 w-5 h-5"
                             style={{ transition: "all .15s ease" }}
-                            defaultChecked='false'
+                            defaultChecked={checked}
                             onChange={handleCheckboxChange}
+                            value='Biology'
                           />
                           <span className="ml-2 text-sm font-semibold text-white text-bold text-xl ">
                             I have completed this module!

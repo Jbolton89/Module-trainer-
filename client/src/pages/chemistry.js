@@ -112,8 +112,9 @@ export default function Physics() {
                             type="checkbox"
                             className="form-checkbox border-0 rounded text-gray-800 ml-1 w-5 h-5"
                             style={{ transition: "all .15s ease" }}
-                            defaultChecked='false'
+                            defaultChecked={checked}
                             onChange={handleCheckboxChange}
+                            value='Chemistry'
                           />
                           <span className="ml-2 text-sm font-semibold text-white text-bold text-xl ">
                             I have completed this module!

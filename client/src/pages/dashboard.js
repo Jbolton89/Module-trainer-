@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { FaFrown, FaGrinAlt, FaMeh, FaFlask, FaBiohazard, FaRadiation } from "react-icons/fa";
+import { Link } from 'react-router-dom'; 
 
 export default function Dashboard() {
   const [currentFace, setCurrentFace] = useState("");
@@ -61,9 +62,9 @@ export default function Dashboard() {
               </div>
               <p className="text-sm text-grey-400 mt-4">
                 <span className="text-emerald-500 mr-2">
-                  <i className="fas fa-arrow-up"></i> 3.48%
+                  <i className="fas fa-arrow-up"></i> Ranked
                 </span>
-                <span className="whitespace-nowrap">Since last month</span>
+                <span className="whitespace-nowrap">3rd</span>
               </p>
             </div>
           </div>
@@ -171,23 +172,27 @@ export default function Dashboard() {
                 <div className="w-full lg:w-4/12 md 6/12 px-10 lg:order-1">
                   <div className="sm:flex justify-center py-4 lg:pt-4">
                     <div className=" p-3 text-center">
+                    <Link to='/biology'>
                       <button className="text-xl font-bold block uppercase tracking-wide text-gray-700">
                         <span className="text-4xl font-semibold inline-block py-5 px-5 uppercase rounded-full text-white bg-green-800 mr-3">
                           <FaBiohazard />
                         </span>
                         Biology
                       </button>
+                      </Link>
                       <button className="text-sm text-gray-500">
                         'OMFG what is that?' - Click this one
                       </button>
                     </div>
                     <div className=" p-3 text-center">
+                    <Link to='/chemistry'>
                       <button className="text-xl font-bold block uppercase tracking-wide text-gray-700">
                         <span className="text-4xl font-semibold inline-block py-5 px-5 uppercase rounded-full text-white bg-yellow-700 mr-3">
                           <FaFlask />
                         </span>{" "}
                         Chemistry
                       </button>
+                      </Link> 
                       <button className="text-sm text-gray-500">
                         If Corn oil is made from corn, <br></br>
                         and Olive Oil is made from olives, where does Babby Oil
@@ -195,12 +200,14 @@ export default function Dashboard() {
                       </button>
                     </div>
                     <div className="lg:mr-4 p-3 text-center">
+                      <Link to='/physics'> 
                       <button className="text-xl font-bold block uppercase tracking-wide text-gray-700 flex flex-col">
                         <span className="text-4xl font-semibold inline-block py-5 px-5 uppercase rounded-full text-white bg-red-800 mr-3">
                           <FaRadiation />
                         </span>{" "}
                         Physics
                       </button>
+                      </Link>
                       <span className="text-sm text-gray-500">
                         If sound can't travel through vacuums, why are they so
                         loud?

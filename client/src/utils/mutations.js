@@ -21,23 +21,35 @@ export const NEW_USER = gql`
         _id
         email
         password
-        fullName
+        firstName
+        lastName
       }
     }
   }
 `;
 
 export const UPDATE_PROGRESS = gql` 
- mutation updateProgress($email: String!, $hasCompleted: Boolean) {
+ mutation updateProgress($email: String!, $hasCompleted: Boolean,) {
   updateProgress(email: $email, hasCompleted: $hasCompleted) { 
     _id
-    hasCompleted
-    user
-    lessons (titles: [biology, chemistry, physics]) { 
-      id
+    email
+    hasCompleted (titles: [Biology, Chemistry, Physics]){ 
+      _id
       title
     }
     
   }
 }
   `
+
+// export const UPDATE_HASCOMPLETED = gql` 
+//   mutation updateHasCompleted ($email: String, $hasCompleted: Boolean)
+//     updateHasCompleted(email: $email, hasCompleted: $hasCompleted) { 
+//       _id
+//       hasCompleted
+//       user
+//       lessons (titles: [Biology, Chemistry, Physics]) { 
+//         _id
+//         title
+//       }
+//     }`
