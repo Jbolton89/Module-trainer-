@@ -13,9 +13,11 @@
         "lastName": "Newton",
         "email": "isaac.newton@gmail.com",
         "password": "password1234",
-        "hasCompleted": {
-            "title": "Phyics"
-        }
+        "hasCompleted": [{
+            "title": "Phyics",
+            "subject": "Science",
+            "completed": true
+        }]
     }, 
     { 
         "firstName": "Marie",
@@ -37,54 +39,82 @@
         "lastName": "Franklin",
         "email": "rosalind.franklin@gmail.com",
         "password": "password1234",
-        "hasCompleted": {
-            "title":["Biology", "Chemistry"]
-        } 
+        "hasCompleted": [{
+            "title": "Biology",
+            "subject": "Science",
+            "completed": true
+        }, {
+            "title": "Chemistry",
+            "subject": "Science",
+            "completed": true
+        }] 
     }, 
     { 
         "firstName": "Nicola",
         "lastName": "Tesla",
         "email": "nicola.tesla@gmail.com",
         "password": "password1234",
-        "hasCompleted": {
-            "title":"Physics"
-        }   
+        "hasCompleted": [{
+            "title": "Physics",
+            "subject": "Science",
+            "completed": true
+        }]   
     }, 
     { 
         "firstName": "Charles",
         "lastName": "Darwin",
         "email": "charles.darwin@gmail.com",
         "password": "password1234",
-        "hasCompleted": {
-            "title":"Biology"
-        }
+        "hasCompleted": [{
+            "title": "Physics",
+            "subject": "Science",
+            "completed": true
+        }] 
     }, 
     { 
         "firstName": "Alan",
         "lastName": "Turing",
         "email": "alan.turing@gmail.com",
         "password": "password1234",
-        "hasCompleted": {
-            "title": ["Physics", "Chemistry","Biology"]
-        } 
+        "hasCompleted": [{
+            "title": "Biology",
+            "subject": "Science",
+            "completed": true
+        },{ 
+            "title": "Physics",
+            "subject": "Science",
+            "completed": true
+        },{
+            "title": "Chemistry",
+            "subject": "Science",
+            "completed": true
+        }]  
     }, 
     { 
         "firstName": "Stephen",
         "lastName": "Hawking",
         "email": "steven.hawking@gmail.com",
         "password": "password1234",
-        "hasCompleted": {
-            "title":"Physics"
-        }
+        "hasCompleted": [{
+            "title": "Physics",
+            "subject": "Science",
+            "completed": true
+        }] 
     }, 
     { 
         "firstName": "James D",
         "lastName": "Watson",
         "email": "james.d.watson@gmail.com",
         "password": "password1234",
-        "hasCompleted": {
-            "title":["Biology", "Chemistry"]
-        } 
+        "hasCompleted": [{
+            "title": "Physics",
+            "subject": "Science",
+            "completed": true
+        },{ 
+            "title": "Biology",
+            "subject": "Science",
+            "completed": true
+        }] 
     }, 
     { 
         "firstName": "Madeleine",
@@ -92,7 +122,7 @@
         "email": "modes@gmail.com",
         "password": "password1234",
         "hasCompleted": {
-            "title":""
+            
         }
     } 
 ]
