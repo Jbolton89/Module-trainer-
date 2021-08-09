@@ -10,23 +10,31 @@ export default function Login(props) {
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
    // update state based on form input changes
-  const handleInputChange = (event) => { 
-    const { email, value } = event.target;
+  const handleInputChange = (e) => { 
+    const { name, value } = e.target;
 
     setFormState({ 
       ...formState,
-      [email]: value,
+      [name]: value,
     });
   };
 
   // submit form
   const handleFormSubmit = async (event) => { 
     event.preventDefault();
+    // console.log(formState);
+
+    const form = event.currentTarget; 
+    if (form.checkValidity() === false) { 
+      event.preventDefault();
+      event.stopPropagation();
+    }
     console.log(formState);
     try { 
       const { data } = await login({ 
         variables: { ...formState },
       });
+      console.log(data);
 
       Auth.login(data.login.token); 
     } catch (e) { 
@@ -70,7 +78,7 @@ export default function Login(props) {
                     <hr className="mt-6 border-b-1 border-gray-600" />
                   </div>
                   <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
-                    <form on submit={handleFormSubmit}>
+                    <form onSubmit={handleFormSubmit}>
                       <div className="relative w-full mb-3">
                         <label
                           className="block uppercase text-gray-700 text-xs font-bold mb-2"
@@ -79,8 +87,9 @@ export default function Login(props) {
                           Email
                         </label>
                         <input
-                          type="text"
+                          type="email"
                           name="email"
+                          id="email"
                           className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                           placeholder="Email"
                           style={{ transition: "all .15s ease" }}
@@ -99,6 +108,7 @@ export default function Login(props) {
                         <input
                           type="password"
                           name="password"
+                          id="pwd"
                           className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                           placeholder="Password"
                           style={{ transition: "all .15s ease" }}
@@ -123,7 +133,7 @@ export default function Login(props) {
                       <div className="text-center mt-6">
                         <button
                           className="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
-                          type="button"
+                          type="submit"
                           style={{ transition: "all .15s ease" }}
                         >
                           Sign In

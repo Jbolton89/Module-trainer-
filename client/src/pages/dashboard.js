@@ -183,7 +183,7 @@ export default function Dashboard() {
                     </div>
                     <div className=" p-3 text-center">
                       <button className="text-xl font-bold block uppercase tracking-wide text-gray-700">
-                        <span className="text-4xl font-semibold inline-block py-5 px-5 uppercase rounded-full text-white bg-yellow-800 mr-3">
+                        <span className="text-4xl font-semibold inline-block py-5 px-5 uppercase rounded-full text-white bg-yellow-700 mr-3">
                           <FaFlask />
                         </span>{" "}
                         Chemistry

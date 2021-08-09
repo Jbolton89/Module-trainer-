@@ -12,14 +12,14 @@ export default function Signup() {
     password: "",
   });
    
-  const [addUser, { error, data }] = useMutation(NEW_USER);
+  const [newUser, { error, data }] = useMutation(NEW_USER);
 
   const handleInputChange = (event) => {
-    const { email, value } = event.target;
+    const { name, value } = event.target;
 
     setFormState({
       ...formState,
-      [email]: value,
+      [name]: value,
     });
   };
 
@@ -28,7 +28,7 @@ export default function Signup() {
     console.log(formState);
 
     try {
-      const { data } = await addUser({
+      const { data } = await newUser({
         variables: { ...formState },
       });
 
@@ -69,7 +69,7 @@ export default function Signup() {
                     <Link to="/">back to the homepage.</Link>
                   </p>
                 ) : (
-                  <form on Submit={handleFormSubmit}>
+                  <form onSubmit={handleFormSubmit}>
                     <div className="relative w-full mb-3">
                       <label
                         className="block uppercase text-gray-700 text-xs font-bold mb-2"
@@ -78,7 +78,9 @@ export default function Signup() {
                         First Name
                       </label>
                       <input
-                        type="text"
+                        type="firstName"
+                        name="firstName"
+                        id="firstName"
                         className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                         placeholder="Enter first name here"
                         style={{ transition: "all .15s ease" }}
@@ -94,7 +96,9 @@ export default function Signup() {
                         Last Name
                       </label>
                       <input
-                        type="text"
+                        type="lastName"
+                        name="lastName"
+                        id="lastName"
                         className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                         placeholder="Last Name"
                         style={{ transition: "all .15s ease" }}
@@ -112,6 +116,8 @@ export default function Signup() {
                       </label>
                       <input
                         type="email"
+                        name="email"
+                        id="email"
                         className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                         placeholder="Email"
                         style={{ transition: "all .15s ease" }}
@@ -129,8 +135,10 @@ export default function Signup() {
                       </label>
                       <input
                         type="password"
+                        name="password"
+                        id="pwd"
                         className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                        placeholder="Password"
+                        placeholder="******"
                         style={{ transition: "all .15s ease" }}
                         onChange={handleInputChange}
                       />

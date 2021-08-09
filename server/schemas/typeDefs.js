@@ -10,9 +10,9 @@ type User {
     fullName: String
     email: String
     password: String
-    hasCompleted: [Lesson]! {
-      title: [Lesson]
-    }
+    # hasCompleted: [Lesson]! {
+    # title: [Lesson]
+    # }
   }
 
 type Lesson { 

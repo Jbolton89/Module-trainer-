@@ -42,7 +42,20 @@ export default function Navbar() {
                 
                 </div> 
                 <div className='w-fill block flex grow sm:flex sm:items-center sm:w-auto justify-between'>  
-                    {Auth.loggedIn() ? (
+                    
+                { routes.map((route) => { 
+                        return ( 
+                            <div key={route.title}  >
+                                <Link to={route.url}
+                                className={`bg-blue-700 bg-opacity-50 hover:bg-blue-800 px-5 py-3 rounded-3xl text-sm sm:flex-grow text-white ${location.pathname === route.url ? 'nav-link-active' : 'nav-link'}`}>
+                                    {route.title}
+                                </Link>
+                            </div>
+                        )
+                    })}
+                    
+                    
+                    {/* {Auth.loggedIn() ? (
                     routes.map((route) => { 
                         return ( 
                             <div key={route.title}  >
@@ -53,7 +66,7 @@ export default function Navbar() {
                             </div>
                         )
                     })
-                    ) : ("")}
+                    ) : ("")} */}
 
                   
                 </div>
