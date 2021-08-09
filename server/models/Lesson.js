@@ -7,7 +7,6 @@ const LessonSchema = new Schema ({
     title: { 
         type: String, 
         trim: true, 
-        required: "Lesson needs a title",
     },
 
     subject: { 

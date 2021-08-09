@@ -118,11 +118,14 @@
     }, 
     { 
         "firstName": "Madeleine",
-        "lastName": "O'Dea",
+        "lastName": "ODea",
         "email": "modes@gmail.com",
         "password": "password1234",
-        "hasCompleted": {
+        "hasCompleted": [{
+            "title:": "",
+            "subject": "", 
+            "completed": false
             
-        }
+        }]
     } 
 ]
