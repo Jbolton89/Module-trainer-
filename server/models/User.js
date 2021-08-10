@@ -93,19 +93,19 @@ UserSchema.pre('save', async function (next) {
   });
   
   // compare the incoming password with the hashed password
-userSchema.methods.isCorrectPassword = async function(password) {
-    return await bcrypt.compare(password, this.password);
-  };
+// userSchema.methods.isCorrectPassword = async function(password) {
+//     return await bcrypt.compare(password, this.password);
+//   };
   
-//   UserSchema.methods.isCorrectPassword = async function (password) {
-//     //   console.log(this)
-//     //   console.log(this.password)
-//     //   console.log(password)
+  UserSchema.methods.isCorrectPassword = async function (password) {
+      console.log(this)
+      console.log(this.password)
+      console.log(password)
 //     // const result = await bcrypt.compare(password, this.password);
 //     // console.log(result)
 //     // return result
-//     return password === this.password;
-//   };
+    return password === this.password;
+  };
 
   
 UserSchema.methods.setFullName = function() { 
