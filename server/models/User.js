@@ -49,10 +49,10 @@ const UserSchema = new Schema({
     ],
 
     hasCompleted: [Lesson.schema], 
-        // title: [{ 
-        //     type: Schema.Types.ObjectId,
-        //     ref: 'Lesson' 
-        //     }],
+        title: [{ 
+            type: Schema.Types.ObjectId,
+            ref: 'Lesson' 
+            }],
 
                     
         
@@ -88,7 +88,6 @@ UserSchema.pre('save', async function (next) {
       const saltRounds = 10;
       this.password = await bcrypt.hash(this.password, saltRounds);
     }
-  console.log(this.password)
     next();
   });
   
