@@ -22,21 +22,22 @@ export default function Login(props) {
   // submit form
   const handleFormSubmit = async (event) => { 
     event.preventDefault();
-    // console.log(formState);
 
-    const form = event.currentTarget; 
-    if (form.checkValidity() === false) { 
-      event.preventDefault();
-      event.stopPropagation();
-    }
+    // const form = event.currentTarget; 
+    // if (form.checkValidity() === false) { 
+    //   event.preventDefault();
+    //   event.stopPropagation();
+    // }
     console.log(formState);
     try { 
-      const { data } = await login({ 
-        variables: { ...formState },
+      const mutation = await login({ 
+        variables: { email: formState.email, password: formState.password},
       });
       console.log(data);
 
-      Auth.login(data.login.token); 
+      const token = mutation.data.login.token;
+
+      Auth.login(token); 
     } catch (e) { 
       console.error(e);
     }
