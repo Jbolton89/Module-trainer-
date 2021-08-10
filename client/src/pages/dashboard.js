@@ -35,8 +35,7 @@ export default function Dashboard() {
           </div>
           <div className="overflow-hidden h-5 mt-5 mb-12 text-xs flex rounded bg-green-400">
             <div
-              styleName="width:30%"
-              className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-yellow-200"
+              className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-800 w-3/5"
             ></div>
           </div>
         </div>
