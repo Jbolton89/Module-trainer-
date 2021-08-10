@@ -57,7 +57,8 @@ const resolvers = {
 
                await User.findOneAndUpdate( 
                    {_id: context.user._id }, 
-                   {$addToSet: { lessons: lesson._id}}
+                   {$addToSet: { hasCompleted: lesson._id}},
+                   {new: true}
                 //    enter title for the lesson we are adding
                );
 

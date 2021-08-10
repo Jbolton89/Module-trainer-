@@ -33,7 +33,7 @@ type Query {
   }
 
 type Mutation { 
-    newUser(firstName: String!, lastName: String!, fullName: String!, email: String!, password: String!): Auth
+    newUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     newLesson(title: String!, subject: String):Lesson
     updateProgress(lessons: [ID!], hasCompleted: Boolean!): User

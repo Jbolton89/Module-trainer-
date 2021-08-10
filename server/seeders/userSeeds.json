@@ -118,12 +118,12 @@
     }, 
     { 
         "firstName": "Madeleine",
-        "lastName": "ODea",
+        "lastName": "O'Dea",
         "email": "modes@gmail.com",
         "password": "password1234",
         "hasCompleted": [{
-            "title:": "",
-            "subject": "", 
+            "title:": "Physics",
+            "subject": "Science", 
             "completed": false
             
         }]

@@ -31,7 +31,6 @@ const UserSchema = new Schema({
 
     password: {
         type: String,
-        trim: true,
         required: true,
         validate: [({ length }) => length >=8, "Password needs to be at least 8 characters!"],
 
@@ -50,10 +49,10 @@ const UserSchema = new Schema({
     ],
 
     hasCompleted: [Lesson.schema], 
-        title: [{ 
-            type: Schema.Types.ObjectId,
-            ref: 'Lesson' 
-            }],
+        // title: [{ 
+        //     type: Schema.Types.ObjectId,
+        //     ref: 'Lesson' 
+        //     }],
 
                     
         
@@ -71,11 +70,11 @@ const UserSchema = new Schema({
 
     lastLoggedIn: Date, 
 
-    lessons: [Lesson.schema],
-     title: [{ 
-            type: Schema.Types.ObjectId, 
-            ref: 'Lesson',
-        }] 
+    // lessons: [Lesson.schema],
+    //  title: [{ 
+    //         type: Schema.Types.ObjectId, 
+    //         ref: 'Lesson',
+    //     }] 
     
 
 
@@ -83,16 +82,24 @@ const UserSchema = new Schema({
 
 // Bcrypt - need to check if correct 
 UserSchema.pre('save', async function (next) {
+    console.log(this)
+    console.log(this.password)
     if (this.isNew || this.isModified('password')) {
       const saltRounds = 10;
       this.password = await bcrypt.hash(this.password, saltRounds);
     }
-  
+  console.log(this.password)
     next();
   });
   
   UserSchema.methods.isCorrectPassword = async function (password) {
-    return bcrypt.compare(password, this.password);
+    //   console.log(this)
+    //   console.log(this.password)
+    //   console.log(password)
+    // const result = await bcrypt.compare(password, this.password);
+    // console.log(result)
+    // return result
+    return password === this.password;
   };
 
   
