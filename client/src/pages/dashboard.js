@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { FaFrown, FaGrinAlt, FaMeh, FaFlask, FaBiohazard, FaRadiation } from "react-icons/fa";
 import { Link } from 'react-router-dom'; 
 
@@ -100,10 +99,10 @@ export default function Dashboard() {
               <div className="flex flex-wrap">
                 <div className="relative w-full pr-4 max-w-full flex-grow flex-1">
                   <h5 className="text-white uppercase font-bold text-xs">
-                    KPI's
+                    KPI here
                   </h5>
                   <span className="font-semibold text-xl text-white">
-                    4
+                    result
                   </span>
                 </div>
                 <div className="relative w-auto pl-4 flex-initial">

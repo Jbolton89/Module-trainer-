@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <nav className="flex items-center justify-between flex-wrap bg-blue-600 p-6">
-      {/* Navbar container here */}
+    
 
       <div
         className={`flex items-centre flex-shrink-0 text-white mr-6 ${
@@ -33,9 +33,7 @@ export default function Navbar() {
           <div className="text-white text-6xl text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-blue-900">
             <FaFrog />
           </div>
-          {/* <img src={Logo} alt='' class='h-14 w-14'></img> */}
-
-          {/* Try and find a badge for here */}
+          
           <span className="font-bold text-4xl m-auto">
             <Link to="/">Module Trainer</Link>
           </span>

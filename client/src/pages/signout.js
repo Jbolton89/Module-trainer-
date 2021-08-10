@@ -16,15 +16,10 @@ export default function Signout() {
       <div className="flex flex-wrap">
         <div className="w-full lg:mb-0 mb-12 px-4 object-center">
           <div className="px-6">
-            {/* <img
-                  alt="..."
-                  src=""
-
-                /> */}
             <div className="pt-6 text-center">
               <h5 className="text-xl font-bold">Jason Bolton</h5>
               <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">
-                Aspiring Developer
+                Future developer (..maybe after this)
               </p>
               <div className="mt-6">
                 <button
