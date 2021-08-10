@@ -81,26 +81,31 @@ const UserSchema = new Schema({
 });
 
 
-// UserSchema.pre('save', async function (next) {
-//     console.log(this)
-//     console.log(this.password)
-//     if (this.isNew || this.isModified('password')) {
-//       const saltRounds = 10;
-//       this.password = await bcrypt.hash(this.password, saltRounds);
-//     }
-//   console.log(this.password)
-//     next();
-//   });
+UserSchema.pre('save', async function (next) {
+    console.log(this)
+    console.log(this.password)
+    if (this.isNew || this.isModified('password')) {
+      const saltRounds = 10;
+      this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+  console.log(this.password)
+    next();
+  });
   
-  UserSchema.methods.isCorrectPassword = async function (password) {
-    //   console.log(this)
-    //   console.log(this.password)
-    //   console.log(password)
-    // const result = await bcrypt.compare(password, this.password);
-    // console.log(result)
-    // return result
-    return password === this.password;
+  // compare the incoming password with the hashed password
+userSchema.methods.isCorrectPassword = async function(password) {
+    return await bcrypt.compare(password, this.password);
   };
+  
+//   UserSchema.methods.isCorrectPassword = async function (password) {
+//     //   console.log(this)
+//     //   console.log(this.password)
+//     //   console.log(password)
+//     // const result = await bcrypt.compare(password, this.password);
+//     // console.log(result)
+//     // return result
+//     return password === this.password;
+//   };
 
   
 UserSchema.methods.setFullName = function() { 
@@ -118,16 +123,6 @@ const User = mongoose.model("User", UserSchema)
 
 
 module.exports = User;
-
-
-// Need to set up middleware bcrypt (set pre and static)
-
-
-// Set up pre-save middleware to create password 
-
-// Compare incoming password with hashed password
-
-// go through examples for different middleware etc
 
 
 
