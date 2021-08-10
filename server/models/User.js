@@ -80,17 +80,17 @@ const UserSchema = new Schema({
 
 });
 
-// Bcrypt - need to check if correct 
-UserSchema.pre('save', async function (next) {
-    console.log(this)
-    console.log(this.password)
-    if (this.isNew || this.isModified('password')) {
-      const saltRounds = 10;
-      this.password = await bcrypt.hash(this.password, saltRounds);
-    }
-  console.log(this.password)
-    next();
-  });
+
+// UserSchema.pre('save', async function (next) {
+//     console.log(this)
+//     console.log(this.password)
+//     if (this.isNew || this.isModified('password')) {
+//       const saltRounds = 10;
+//       this.password = await bcrypt.hash(this.password, saltRounds);
+//     }
+//   console.log(this.password)
+//     next();
+//   });
   
   UserSchema.methods.isCorrectPassword = async function (password) {
     //   console.log(this)
