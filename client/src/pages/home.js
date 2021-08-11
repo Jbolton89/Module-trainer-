@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import {
   FaBiohazard,
   FaFlask,
@@ -7,7 +7,6 @@ import {
   FaBookOpen,
   FaAppleAlt,
 } from "react-icons/fa";
-
 
 export default function Home() {
   return (
@@ -19,12 +18,12 @@ export default function Home() {
               Online Training, time to get your mind shredded
             </h3>
             <p className="mt-4 ml-6 leading-relaxed text-lg  mt-1 text-sm text-gray-300 italic">
-              Come on down and have a brain training session with your
-              old mate Jase.
+              Come on down and have a brain training session with your old mate
+              Jase.
             </p>
-            <div className='m-8 text-bold font-bold'> 
-                    <h4 className=''> Current Packages: </h4>
-                  </div>
+            <div className="m-8 text-bold font-bold">
+              <h4 className=""> Current Packages: </h4>
+            </div>
             <ul className="list-none m-6">
               <li className="py-2">
                 <div className="flex items-center">
@@ -33,7 +32,7 @@ export default function Home() {
                       <FaBiohazard />
                     </span>
                   </div>
-                  
+
                   <div>
                     <h4 className="text-blue-900-bold">Biology</h4>
                   </div>
@@ -67,23 +66,23 @@ export default function Home() {
           </div>
 
           <div className="mt-12 md:width-auto">
-            <Link to='./login'>
-            <button className="bg-purple-600 bg-opacity-50 hover:bg-purple-600 shadow text-white dont-bold py-4 px-8 rounded-full ml-5">
-              <div className="flex">
-                <FaBookOpen className="text-6xl"></FaBookOpen>
-                <p className="flex-items pl-5">
-                  I am keen to continue learning
-                </p>
-              </div>
-            </button>
+            <Link to="./login">
+              <button className="bg-purple-600 bg-opacity-50 hover:bg-purple-600 shadow text-white dont-bold py-4 px-8 rounded-full ml-5">
+                <div className="flex">
+                  <FaBookOpen className="text-6xl"></FaBookOpen>
+                  <p className="flex-items pl-5">
+                    I am keen to continue learning
+                  </p>
+                </div>
+              </button>
             </Link>
-            <Link to='signup'>
-            <button className="bg-red-600 bg-opacity-50 hover:bg-red-600 shadow text-white dont-bold py-4 px-8 rounded-full ml-5">
-              <div className="flex">
-                <FaAppleAlt className="text-6xl"></FaAppleAlt>
-                <p className="pl-5">I am keen to begin learning</p>
-              </div>
-            </button>
+            <Link to="signup">
+              <button className="bg-red-600 bg-opacity-50 hover:bg-red-600 shadow text-white dont-bold py-4 px-8 rounded-full ml-5">
+                <div className="flex">
+                  <FaAppleAlt className="text-6xl"></FaAppleAlt>
+                  <p className="pl-5">I am keen to begin learning</p>
+                </div>
+              </button>
             </Link>
           </div>
         </section>

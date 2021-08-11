@@ -1,6 +1,13 @@
 import React, { useState } from "react";
-import { FaFrown, FaGrinAlt, FaMeh, FaFlask, FaBiohazard, FaRadiation } from "react-icons/fa";
-import { Link } from 'react-router-dom'; 
+import {
+  FaFrown,
+  FaGrinAlt,
+  FaMeh,
+  FaFlask,
+  FaBiohazard,
+  FaRadiation,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
   const [currentFace, setCurrentFace] = useState("");
@@ -34,9 +41,7 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="overflow-hidden h-5 mt-5 mb-12 text-xs flex rounded bg-green-400">
-            <div
-              className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-800 w-3/5"
-            ></div>
+            <div className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-800 w-3/5"></div>
           </div>
         </div>
 
@@ -59,9 +64,7 @@ export default function Dashboard() {
                 </div>
               </div>
               <p className="text-sm text-white mt-4">
-                <span className="text-emerald-500 mr-2">
-                  Results
-                </span>
+                <span className="text-emerald-500 mr-2">Results</span>
               </p>
             </div>
           </div>
@@ -72,7 +75,7 @@ export default function Dashboard() {
               <div className="flex flex-wrap">
                 <div className="relative w-full pr-4 max-w-full flex-grow flex-1">
                   <h5 className="text-white uppercase font-bold text-xs">
-                   KPI here
+                    KPI here
                   </h5>
                   <span className="font-semibold text-xl text-white">
                     result
@@ -85,9 +88,7 @@ export default function Dashboard() {
                 </div>
               </div>
               <p className="text-sm text-white mt-4">
-                <span className="text-white mr-2">
-                  KPI here
-                </span>
+                <span className="text-white mr-2">KPI here</span>
               </p>
             </div>
           </div>
@@ -111,9 +112,7 @@ export default function Dashboard() {
                 </div>
               </div>
               <p className="text-sm text-white mt-4">
-                <span className="text-white mr-2">
-                   KPI here
-                </span>
+                <span className="text-white mr-2">KPI here</span>
                 <span className="whitespace-nowrap text-white">result</span>
               </p>
             </div>
@@ -138,9 +137,7 @@ export default function Dashboard() {
                 </div>
               </div>
               <p className="text-sm text-white mt-4">
-                <span className="text-emerald-500 mr-2">
-                   KPI here
-                </span>
+                <span className="text-emerald-500 mr-2">KPI here</span>
                 <span className="whitespace-nowrap">result</span>
               </p>
             </div>
@@ -168,27 +165,27 @@ export default function Dashboard() {
                 <div className="w-full lg:w-4/12 md 6/12 px-10 lg:order-1">
                   <div className="sm:flex justify-center py-4 lg:pt-4">
                     <div className=" p-3 text-center">
-                    <Link to='/biology'>
-                      <button className="text-xl font-bold block uppercase tracking-wide text-gray-700">
-                        <span className="text-4xl font-semibold inline-block py-5 px-5 uppercase rounded-full text-white bg-green-800 mr-3">
-                          <FaBiohazard />
-                        </span>
-                        Biology
-                      </button>
+                      <Link to="/biology">
+                        <button className="text-xl font-bold block uppercase tracking-wide text-gray-700">
+                          <span className="text-4xl font-semibold inline-block py-5 px-5 uppercase rounded-full text-white bg-green-800 mr-3">
+                            <FaBiohazard />
+                          </span>
+                          Biology
+                        </button>
                       </Link>
                       <button className="text-sm text-gray-500">
                         'OMFG what is that?' - Click this one
                       </button>
                     </div>
                     <div className=" p-3 text-center">
-                    <Link to='/chemistry'>
-                      <button className="text-xl font-bold block uppercase tracking-wide text-gray-700">
-                        <span className="text-4xl font-semibold inline-block py-5 px-5 uppercase rounded-full text-white bg-yellow-700 mr-3">
-                          <FaFlask />
-                        </span>{" "}
-                        Chemistry
-                      </button>
-                      </Link> 
+                      <Link to="/chemistry">
+                        <button className="text-xl font-bold block uppercase tracking-wide text-gray-700">
+                          <span className="text-4xl font-semibold inline-block py-5 px-5 uppercase rounded-full text-white bg-yellow-700 mr-3">
+                            <FaFlask />
+                          </span>{" "}
+                          Chemistry
+                        </button>
+                      </Link>
                       <button className="text-sm text-gray-500">
                         If Corn oil is made from corn, <br></br>
                         and Olive Oil is made from olives, where does Babby Oil
@@ -196,13 +193,13 @@ export default function Dashboard() {
                       </button>
                     </div>
                     <div className="lg:mr-4 p-3 text-center">
-                      <Link to='/physics'> 
-                      <button className="text-xl font-bold block uppercase tracking-wide text-gray-700 flex flex-col">
-                        <span className="text-4xl font-semibold inline-block py-5 px-5 uppercase rounded-full text-white bg-red-800 mr-3">
-                          <FaRadiation />
-                        </span>{" "}
-                        Physics
-                      </button>
+                      <Link to="/physics">
+                        <button className="text-xl font-bold block uppercase tracking-wide text-gray-700 flex flex-col">
+                          <span className="text-4xl font-semibold inline-block py-5 px-5 uppercase rounded-full text-white bg-red-800 mr-3">
+                            <FaRadiation />
+                          </span>{" "}
+                          Physics
+                        </button>
                       </Link>
                       <span className="text-sm text-gray-500">
                         If sound can't travel through vacuums, why are they so
