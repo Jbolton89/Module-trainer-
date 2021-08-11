@@ -16,9 +16,9 @@ export default function Home() {
         <section className="relative">
           <div className="md:pr-12 text-white ml-10">
             <h3 className="text-3xl font-semibold">
-              Online Training, to get your mind ripped
+              Online Training, time to get your mind shredded
             </h3>
-            <p className="mt-4 ml-6 text-lg leading-relaxed mt-1 text-sm text-gray-300 italic">
+            <p className="mt-4 ml-6 leading-relaxed text-lg  mt-1 text-sm text-gray-300 italic">
               Come on down and have a brain training session with your
               old mate Jase.
             </p>

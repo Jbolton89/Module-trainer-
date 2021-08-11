@@ -11,7 +11,7 @@ export default function Signup() {
     email: "",
     password: "",
   });
-   
+
   const [newUser, { error, data }] = useMutation(NEW_USER);
 
   const handleInputChange = (event) => {
@@ -160,7 +160,6 @@ export default function Signup() {
                 )}
               </div>
             </div>
-            
           </div>
         </div>
       </div>
